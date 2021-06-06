@@ -8,9 +8,9 @@
  * @version 2021-05-21
  */
 public class Terrain {
-    public static final int TYPE_AGRICOLE = 0;
-    public static final int TYPE_RESIDENTIEL = 1;
-    public static final int TYPE_COMMERCIAL = 2;
+    public static final int AGRICOLE = 0;
+    public static final int RESIDENTIEL = 1;
+    public static final int COMMERCIAL = 2;
 
     private int typeTerrain;
     private double prixMin;

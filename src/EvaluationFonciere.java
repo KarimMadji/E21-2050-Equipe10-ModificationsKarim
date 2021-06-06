@@ -5,11 +5,13 @@ import java.util.ArrayList;
  * l'évaluation foncière d'un terrain.
  *
  * @author Félix Bachand
- *
+ *         Karim Madji
  *         TODO:Rajouter votre Nom
  * Code permanent : BACF03089700
+ *                  MADK27059904
  *                  TODO:Rajouter votre Code permanent
  * Courriel : ab491069@ens.uqam.ca
+ *            ad291907@ens.uqam.ca
  *            TODO:Rajouter votre courriel
  * Cours : INF2050-20
  * @version 2021-05-21
@@ -141,13 +143,13 @@ public class EvaluationFonciere {
         double valeur = 0;
 
         switch (typeTerrain) {
-            case Terrain.TYPE_AGRICOLE:
+            case Terrain.AGRICOLE:
                 valeur = superficie * prixMin;
                 break;
-            case Terrain.TYPE_RESIDENTIEL:
+            case Terrain.RESIDENTIEL:
                 valeur = superficie * ((prixMin + prixMax) / 2);
                 break;
-            case Terrain.TYPE_COMMERCIAL:
+            case Terrain.COMMERCIAL:
                 valeur = superficie * prixMax;
                 break;
         }
@@ -168,17 +170,17 @@ public class EvaluationFonciere {
         double valeur = 0;
 
         switch (typeTerrain) {
-            case Terrain.TYPE_AGRICOLE:
+            case Terrain.AGRICOLE:
                 valeur = DROIT_DE_PASSAGE_MONTANT_DE_BASE -
                         nombrePassage *
                                 (DROIT_DE_PASSAGE_PCT_AGRICOLE * valeurLot);
                 break;
-            case Terrain.TYPE_RESIDENTIEL:
+            case Terrain.RESIDENTIEL:
                 valeur = DROIT_DE_PASSAGE_MONTANT_DE_BASE -
                         nombrePassage *
                                 (DROIT_DE_PASSAGE_PCT_RESIDENTIEL * valeurLot);
                 break;
-            case Terrain.TYPE_COMMERCIAL:
+            case Terrain.COMMERCIAL:
                 valeur = DROIT_DE_PASSAGE_MONTANT_DE_BASE -
                         nombrePassage *
                                 (DROIT_DE_PASSAGE_PCT_COMMERCIAL * valeurLot);
@@ -201,10 +203,10 @@ public class EvaluationFonciere {
         double valeur = 0;
 
         switch (typeTerrain) {
-            case Terrain.TYPE_AGRICOLE:
+            case Terrain.AGRICOLE:
                 valeur = SERVICE_MONTANT_AGRICOLE;
                 break;
-            case Terrain.TYPE_RESIDENTIEL:
+            case Terrain.RESIDENTIEL:
                 if (superficie <= SERVICE_LIMIT_1_RESIDENTIEL) {
                     valeur = SERVICE_MONTANT_LIMIT_1_RESIDENTIEL;
                 }
@@ -217,7 +219,7 @@ public class EvaluationFonciere {
                                 * nombreService;
                 }
                 break;
-            case Terrain.TYPE_COMMERCIAL:
+            case Terrain.COMMERCIAL:
                 if (superficie <= SERVICE_LIMIT_1_COMMERCIAL) {
                     valeur = SERVICE_MONTANT_LIMIT_1_COMMERCIAL
                                 * nombreService;
